@@ -20,3 +20,5 @@ def dot_product(N, vector1, vector2):
     N, vector1, vector2 = input().split()
     x = (vector1*vector2)
     print(x)
+
+dot_product(input())
