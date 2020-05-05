@@ -5,7 +5,7 @@ turtle.shape('turtle')
 x = 5
 count = 0
 
-while count < 35:
+while count < 135:
     turtle.forward(x)
     turtle.left(90)
     x += 5
