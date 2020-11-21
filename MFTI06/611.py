@@ -15,8 +15,18 @@
 # 
 # Возвращаемое значение
 # Функция должна возвращать одно число -- скалярное произведение заданных векторов.
+# Примеры
+# >> print(dot_product(3, [1, 2, 3], [1, 2, 3])
+# 14
+# >> print(dot_product(3, [1, 2, 3], [4, 5, 6])
+# 32
 
 def dot_product(N, vector1, vector2):
-    N, vector1, vector2 = input().split()
-    x = (vector1*vector2)
-    print(x)
+    ScalarVectorMulti = 0
+    i=0
+    for i in range (N):
+        ScalarVectorMulti = ScalarVectorMulti + vector1[i]*vector2[i]
+        i+=1
+    return ScalarVectorMulti
+dot_product(3, [1, 2, 3], [1, 2, 3])
+print(ScalarVectorMulti)
