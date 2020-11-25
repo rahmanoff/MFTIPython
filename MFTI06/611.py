@@ -23,10 +23,8 @@
 
 def dot_product(N, vector1, vector2):
     ScalarVectorMulti = 0
-    i=0
-    for i in range (N):
-        ScalarVectorMulti = ScalarVectorMulti + vector1[i]*vector2[i]
+    for i in range(N):
+        ScalarVectorMulti = vector1[i]*vector2[i] + ScalarVectorMulti
         i+=1
     return ScalarVectorMulti
-dot_product(3, [1, 2, 3], [1, 2, 3])
-print(ScalarVectorMulti)
+# print(dot_product(3, [1, 2, 3], [4, 5, 6]))
