@@ -26,7 +26,7 @@ for i in range(M): # Получаем номера интересующих до
     x = int(input()) # Получаем номер каждой интересующей нас дощечки
     for item in range(days-1,-1,-1): # Ищем эту дощечку в массиве A
         if DaysData[item][0] <= x <= DaysData[item][1]: # Если номер дощечки в интервале li - ri,
-            print(DaysData[item][2], end=' ') # то выводим номер цвета ci
+            print(DaysData[item][2], end=' ') # то выводим в цикле номер цвета ci через пробел
             break
     else:
         print(0)
