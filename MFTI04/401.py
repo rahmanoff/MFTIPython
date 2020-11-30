@@ -1,40 +1,101 @@
-# Make of graphic primitives
+# Алгоритмы на Python 3. Лекция №4
+# Практика: http://judge.mipt.ru/mipt_cs_on_python3/
+# Видео - https://www.youtube.com/watch?v=DvsCUI5FNnI
+# Практика - https://github.com/mipt-cs/course-site-python3/wiki
+
+# курс: Информатика. Алгоритмы и структуры данных на Python 3.
+# лектор: Хирьянов Тимофей Фёдорович
+# 26.09.2017
+
+# Темы, рассмотренные на лекции №4:
+# - Описание простых функций с параметрами.
+# - Декомпозиция задачи.
+# - Структурное программирование. Проектирование «сверху-вниз».
+# - Стек вызовов.
+# - Полиморфизм в Python. Duck typing.
+# - Значения параметров по умолчанию.
+# - Именованные параметры функций
+# - Мастер-класс по структурному программированию на проекторе
+# - Метод грубой силы.
+# - Тест простоты числа.
+# - Разложение числа на множители.
+
+# Функции
+def hello():
+    print('Hello, World')
+hello()
+f = hello
+f()
+
+# Функция с формальным параметром
+def hello(name):
+    print('Hello,', name)
+hello('John')
+hello('Alice')
+hello('Peter')
+
+# Функция со значением параметра по умолчанию
+def hello(name='Mario'):
+    print('Hello,', name)
+hello()
+
+# Функция сравнения двух числе
+def max2(x,y):
+    if x>y:
+        return x # return - прекращает выполнение Функции!!!
+    return y # else: можно не писать
+print(max2(10,7)) # Вывод на экран большего из двух чисел - 10 и 7
+
+# Функция сравнения трех чисел
+def max3(x,y,z):
+    return max2(x,max2(y,z)) # Сравнение при помощи, ранее написаной, функции max2. Функция max3 два раза вызывает функцию max2!!!
+print(max3(3,5,7)) # Вывод на экран большего из трех чисел - 3, 5, 7
+print(max3('ab','abc','abd')) # Duck Typing - если что-то выглядит как Утка, крякает как утка, то это - Утка. 
+                              # Лексикографический порядок сравнения строк. Буква D старше (дальше по алфавиту), чем С.
+                              # "Кот" меньше, чем "Котенок" - больше букв в слове, слово позже записано в словаре. 
+
+# Раздельный Hello. Hello с условиями.
+def hello_separated(name="World", separator="-"): # Разделитель "-" - тире.
+    print("Hello,", name, sep=separator)
+hello_separated("John","***")
+hello_separated(separator="***", name="John") # Другой порядок параметров также возможен. Именованные параметры.
+
+# Структурное программирование
+# 
+# Проектирование "сверху-вниз"
+
 import graphics as gr
 
-window = gr.GraphWin("Graphic Primitives", 800, 600)
+def build_house(window, upper_left_corner, width):
+    """ Функция, которая рисует Дом """
+    # height = calculate_height(width)
+    pass
+    
+window = gr.GraphWin("Russian Game", 300,300)
+build_house(window, gr.Point(100,100), 100)
+print("Ура! Дом построен!")
+input()
 
-sky = gr.Rectangle(gr.Point(0,0), gr.Point(799,399))
-sky.setFill('blue')
-earth = gr.Rectangle(gr.Point(0,399), gr.Point(799,599))
-earth.setFill('grey')
-sun = gr.Circle(gr.Point(75,75),100)
-sun.setFill('yellow')
-wall = gr.Rectangle(gr.Point(150,300), gr.Point(350,500))
-wall.setFill('grey')
-glass = gr.Rectangle(gr.Point(175,350), gr.Point(250,425))
-glass.setFill('white')
-hLine = gr.Line(gr.Point(175,380), gr.Point(250,380))
-vLine = gr.Line(gr.Point(215,380), gr.Point(215,425))
-door = gr.Rectangle(gr.Point(275,375), gr.Point(325,499))
-door.setFill('brown')
-roof = gr.Polygon(gr.Point(135,300), gr.Point(250,200), gr.Point(365,300))
-roof.setFill('black')
-handle = gr.Circle(gr.Point(285,440),3)
-tree = gr.Polygon(gr.Point(450,500), gr.Point(500,400), gr.Point(460,400), gr.Point(510,300), gr.Point(470,300), gr.Point(600,200), gr.Point(730,300), gr.Point(690,300), gr.Point(740,400), gr.Point(700,400), gr.Point(750,500), gr.Point(750,500), gr.Point(750,500))
-tree.setFill('green')
+# Метод грубой силы - Brute Force
 
-sky.draw(window)
-earth.draw(window)
-sun.draw(window)
-wall.draw(window)
-glass.draw(window)
-hLine.draw(window)
-vLine.draw(window)
-door.draw(window)
-roof.draw(window)
-handle.draw(window)
-tree.draw(window)
+# Тест простоты числа
+def is_simple_number(x):
+    """ Определяет является ли число простым. x - целое положительное число. Если простое, то возвращает True, а иначе - False """
+    divisor = 2
+    while divisor < x:
+        if x % divisor == 0:
+            return False
+        divisor +=1
+    return True
 
-window.getMouse()
+# Разложение числа на множители
+def factorize_number(x):
+    """ Раскладывает число на множители. Печатает их на экран. x - целое положительное число. """
+    divisor = 2
+    while x > 1:
+        if x % divisor == 0:
+            print(divisor)
+            x //= divisor
+        else:
+            divisor +=1
 
-window.close()

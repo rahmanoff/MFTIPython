@@ -1,64 +1,39 @@
-# Структурное программирование
-
+# Make of graphic primitives
 import graphics as gr
 
-window = gr.GraphWin("Jenkslex and Ganzz project", 400, 400)
+window = gr.GraphWin("Graphic Primitives", 800, 600)
 
-def draw_left_eye():
-    eye = gr.Circle(gr.Point(150, 180), 20)
-    pupil = gr.Circle(gr.Point(150, 180), 10)
+sky = gr.Rectangle(gr.Point(0,0), gr.Point(799,399))
+sky.setFill('blue')
+earth = gr.Rectangle(gr.Point(0,399), gr.Point(799,599))
+earth.setFill('grey')
+sun = gr.Circle(gr.Point(75,75),100)
+sun.setFill('yellow')
+wall = gr.Rectangle(gr.Point(150,300), gr.Point(350,500))
+wall.setFill('grey')
+glass = gr.Rectangle(gr.Point(175,350), gr.Point(250,425))
+glass.setFill('white')
+hLine = gr.Line(gr.Point(175,380), gr.Point(250,380))
+vLine = gr.Line(gr.Point(215,380), gr.Point(215,425))
+door = gr.Rectangle(gr.Point(275,375), gr.Point(325,499))
+door.setFill('brown')
+roof = gr.Polygon(gr.Point(135,300), gr.Point(250,200), gr.Point(365,300))
+roof.setFill('black')
+handle = gr.Circle(gr.Point(285,440),3)
+tree = gr.Polygon(gr.Point(450,500), gr.Point(500,400), gr.Point(460,400), gr.Point(510,300), gr.Point(470,300), gr.Point(600,200), gr.Point(730,300), gr.Point(690,300), gr.Point(740,400), gr.Point(700,400), gr.Point(750,500), gr.Point(750,500), gr.Point(750,500))
+tree.setFill('green')
 
-    eye.setFill('red')
-    pupil.setFill('black')
-
-    eye.draw(window)
-    pupil.draw(window)
-
-def draw_right_eye():
-    eye = gr.Circle(gr.Point(250, 180), 14)
-    pupil = gr.Circle(gr.Point(250, 180),  7)
-
-    eye.setFill('red')
-    pupil.setFill('black')
-
-    eye.draw(window)
-    pupil.draw(window)
-
-def draw_eyebrows():
-    eyebrow1 = gr.Line(gr.Point(100, 120), gr.Point(180, 170))
-    eyebrow2 = gr.Line(gr.Point(220, 170), gr.Point(300, 120))
-
-    eyebrow1.setWidth(10)
-    eyebrow2.setWidth(10)
-
-    eyebrow1.setOutline('black')
-    eyebrow2.setOutline('black')
-
-    eyebrow1.draw(window)
-    eyebrow2.draw(window)
-
-def draw_face():
-    face = gr.Circle(gr.Point(200, 200), 100)
-    face.setFill('yellow')
-
-    face.draw(window)
-
-def draw_mouth():
-    mouth = gr.Line(gr.Point(150, 260), gr.Point(250, 260))
-    mouth.setWidth(20)
-    mouth.setOutline('black')
-
-    mouth.draw(window)
-
-def draw_angry_lecturer():
-    draw_face()
-    draw_right_eye()
-    draw_left_eye()
-    draw_eyebrows()
-    draw_mouth()
-
-
-draw_angry_lecturer()
+sky.draw(window)
+earth.draw(window)
+sun.draw(window)
+wall.draw(window)
+glass.draw(window)
+hLine.draw(window)
+vLine.draw(window)
+door.draw(window)
+roof.draw(window)
+handle.draw(window)
+tree.draw(window)
 
 window.getMouse()
 
