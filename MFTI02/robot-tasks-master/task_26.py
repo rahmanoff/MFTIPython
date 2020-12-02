@@ -1,3 +1,6 @@
+# Практика: Робот
+# Закрасить клетки.
+
 #!/usr/bin/python3
 
 from pyrob.api import *

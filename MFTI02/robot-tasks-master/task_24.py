@@ -1,3 +1,6 @@
+# Практика: Робот
+# Закрасить клетки.
+
 #!/usr/bin/python3
 
 from pyrob.api import *
@@ -22,8 +25,6 @@ def task_2_1():
     move_left()
     move_up()
     move_up()
-
-
 
     pass
 

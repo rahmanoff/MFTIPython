@@ -1,3 +1,6 @@
+# Практика: Робот
+# Закрасить клетки. Расстояние до стены не известно.
+
 #!/usr/bin/python3
 
 from pyrob.api import *
@@ -9,9 +12,9 @@ def task_8_2():
         if wall_is_on_the_right() == False and wall_is_above() == False:
             fill_cell()
             move_right()
-        elif wall_is_on_the_right() == False and wall_is_above() == True:
+        elif wall_is_on_the_right() == False and wall_is_above():
             move_right()
-        elif wall_is_on_the_right() == True and wall_is_above() == False:
+        elif wall_is_on_the_right() and wall_is_above() == False:
             fill_cell()
     i+=1
 

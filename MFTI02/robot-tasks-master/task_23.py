@@ -1,3 +1,6 @@
+# Практика: Робот
+# Закрасить коридоры и вернуться. Количество и длины коридоров не известны.
+
 #!/usr/bin/python3
 
 from pyrob.api import *
@@ -8,14 +11,14 @@ from pyrob.api import *
 def task_6_6():
     while wall_is_on_the_right() == False:
         move_right()
-        while wall_is_above() == True and wall_is_on_the_right() == False:
+        while wall_is_above() and wall_is_on_the_right() == False:
             move_right()
         while wall_is_above() == False:
             move_up()
             fill_cell()
         while wall_is_beneath() == False:
                 move_down()
-    while wall_is_beneath() == True:
+    while wall_is_beneath():
         move_left()
     pass
 

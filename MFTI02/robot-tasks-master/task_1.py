@@ -1,3 +1,6 @@
+# Практика: Робот
+# Дойти до конечной точки.
+
 #!/usr/bin/python3
 
 from pyrob.api import *

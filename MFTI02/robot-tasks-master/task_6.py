@@ -1,3 +1,6 @@
+# Практика: Робот
+# Дойти до конца стены. Расстояние не известно.
+
 #!/usr/bin/python3
 
 from pyrob.api import *
@@ -7,7 +10,7 @@ from pyrob.api import *
 def task_5_3():
     while wall_is_beneath() == False:
          move_right()
-    while wall_is_beneath() == True:
+    while wall_is_beneath():
         move_right()
     pass
 
