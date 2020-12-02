@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №6: паук
+
 import turtle
 
 turtle.shape('turtle')

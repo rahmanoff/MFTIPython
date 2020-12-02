@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №4: окружность
+
 import turtle
 
 turtle.shape('turtle')

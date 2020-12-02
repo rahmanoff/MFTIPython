@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №12: пружина
+
 import turtle
 
 turtle.shape('turtle')

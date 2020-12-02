@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №11: «бабочка»
+
 import turtle
 
 turtle.shape('turtle')

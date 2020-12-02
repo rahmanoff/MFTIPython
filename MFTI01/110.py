@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №10: «цветок»
+
 import turtle
 
 turtle.shape('turtle')

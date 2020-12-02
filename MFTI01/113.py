@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №13: смайлик
+
 import turtle
 turtle.shape('turtle')
 

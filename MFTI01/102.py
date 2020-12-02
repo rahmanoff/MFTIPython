@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №2: буква S
+
 import turtle
 
 turtle.shape('turtle')

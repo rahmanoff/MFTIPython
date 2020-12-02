@@ -1,3 +1,6 @@
+# Практика: Черепаха
+# Упражнение №3: квадрат
+
 import turtle
 
 turtle.shape('turtle')
