@@ -1,8 +1,10 @@
 import graphics as gr
 
+# Размеры окна программы
 SIZE_X = 1200
 SIZE_Y = 600
 
+# Вывод на экран окна программы
 window = gr.GraphWin("Model", SIZE_X, SIZE_Y)
 
 coords = gr.Point(15, 15)
